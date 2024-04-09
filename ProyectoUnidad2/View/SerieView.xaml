@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ProyectoUnidad2.View.SerieView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProyectoUnidad2.View" xmlns:viewmodel="clr-namespace:ProyectoUnidad2.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:TBBTViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel Background="LightBlue">
+        <Border>
+            <StackPanel Margin="10,10,0,0" >
+                <Image Height="400" VerticalAlignment="Top" Source="https://64.media.tumblr.com/3df7ae519d4a88d27b5269c4b7c6432b/tumblr_pr431uKFyo1tarzp4o1_1280.jpg"></Image>
+                <Button FontWeight="Heavy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Command="{Binding CambiarVistaCommand}" CommandParameter="{x:Static viewmodel:Ventanas.ListaTemporadas}" FontSize="30" Background="Gold" FontFamily="pescadero" Padding="5" Margin="10,20,10,0" Content="Temporadas y Capitulos"></Button>
+            </StackPanel>
+        </Border>
+        <StackPanel Margin="10" >
+            <Image Height="100" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/TBBT_logo.svg/828px-TBBT_logo.svg.png"></Image>
+            <TextBlock Margin="5" Foreground="Gray" FontWeight="Black" FontSize="25" Text="Sinopsis:" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock FontWeight="Bold" TextWrapping="Wrap" Margin="10" MaxWidth="800" Foreground="Gray" FontSize="16" TextAlignment="Justify" Text="El programa se centró originalmente en cinco personajes que vivían en Pasadena, California: Leonard Hofstadter (Johnny Galecki) y Sheldon Cooper (Jim Parsons), ambos físicos de Caltech, que comparten apartamento; Penny (Kaley Cuoco), una camarera y aspirante a actriz que vive al otro lado del pasillo; y los amigos y compañeros de trabajo igualmente geek y socialmente incómodos de Leonard y Sheldon, el ingeniero aeroespacial Howard Wolowitz (Simon Helberg) y el astrofísico Raj Koothrappali (Kunal Nayyar). Con el tiempo, personajes secundarios fueron promovidos a papeles protagónicos, incluida la neurocientífica Amy Farrah Fowler (Mayim Bialik), la microbióloga Bernadette Rostenkowski (Melissa Rauch) y el dueño de una tienda de cómics Stuart Bloom (Kevin Sussman)."></TextBlock>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

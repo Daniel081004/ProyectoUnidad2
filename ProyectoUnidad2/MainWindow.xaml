@@ -1,0 +1,222 @@
+﻿<Window x:Class="ProyectoUnidad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoUnidad2" xmlns:viewModel="clr-namespace:ProyectoUnidad2.ViewModel" xmlns:views="clr-namespace:ProyectoUnidad2.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="531" Width="1013">
+    <Window.DataContext>
+        <viewModel:TBBTViewModel></viewModel:TBBTViewModel>
+    </Window.DataContext>
+    <Grid Background="#191919">
+
+        <views:SerieView>
+            <views:SerieView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.Home}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:SerieView.Style>
+        </views:SerieView>
+
+        <views:TemporadasView>
+            <views:TemporadasView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:TemporadasView.Style>
+        </views:TemporadasView>
+
+        <views:EditarAgregarTemporadaView>
+            <views:EditarAgregarTemporadaView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EditarAgregarTemporadaView.Style>
+        </views:EditarAgregarTemporadaView>
+
+        <views:TemporadasView>
+            <views:TemporadasView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:TemporadasView.Style>
+        </views:TemporadasView>
+
+        <views:EditarAgregarTemporadaView>
+            <views:EditarAgregarTemporadaView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EditarAgregarTemporadaView.Style>
+        </views:EditarAgregarTemporadaView>
+
+        <views:CapitulosView>
+            <views:CapitulosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:CapitulosView.Style>
+        </views:CapitulosView>
+
+        <views:EditarAgregarCapituloView>
+            <views:EditarAgregarCapituloView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EditarAgregarCapituloView.Style>
+        </views:EditarAgregarCapituloView>
+
+        <views:CapitulosView>
+            <views:CapitulosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:CapitulosView.Style>
+        </views:CapitulosView>
+
+        <views:EditarAgregarCapituloView>
+            <views:EditarAgregarCapituloView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EditarAgregarCapituloView.Style>
+        </views:EditarAgregarCapituloView>
+
+        <views:TemporadasView>
+            <views:TemporadasView>
+                <views:TemporadasView.Style>
+                    <Style TargetType="UserControl">
+                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.ListaTemporadas}">
+                                <Setter Property="Visibility" Value="Visible"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </views:TemporadasView.Style>
+            </views:TemporadasView>
+
+            <views:TemporadasView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.ListaTemporadas}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:TemporadasView.Style>
+        </views:TemporadasView>
+
+        <views:CapitulosView>
+            <views:CapitulosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.ListaCapitulos}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:CapitulosView.Style>
+        </views:CapitulosView>
+
+        <views:TemporadasView>
+            <views:TemporadasView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:TemporadasView.Style>
+        </views:TemporadasView>
+
+        <views:EliminarView>
+            <views:EliminarView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EliminarView.Style>
+        </views:EliminarView>
+
+        <views:CapitulosView>
+            <views:CapitulosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:CapitulosView.Style>
+        </views:CapitulosView>
+
+        <views:EliminarView>
+            <views:EliminarView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarCapitulo}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EliminarView.Style>
+        </views:EliminarView>
+    </Grid>
+</Window>

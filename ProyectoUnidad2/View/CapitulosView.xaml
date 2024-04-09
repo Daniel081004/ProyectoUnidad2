@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ProyectoUnidad2.View.CapitulosView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProyectoUnidad2.View" 
+             xmlns:viewmodel="clr-namespace:ProyectoUnidad2.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:TBBTViewModel}"
+             mc:Ignorable="d" x:Name="ucCapitulos"
+             d:DesignHeight="450" d:DesignWidth="800" Background="#50000000">
+    <UserControl.Resources>
+        <ContextMenu x:Key="menu1">
+            <MenuItem Header="Editar" Command="{Binding Source={x:Reference ucCapitulos}, Path=DataContext.CambiarVistaCommand}" CommandParameter="{x:Static viewmodel:Ventanas.EditarCapitulo}"></MenuItem>
+            <MenuItem Header="Eliminar" Command="{Binding Source={x:Reference ucCapitulos}, Path=DataContext.CambiarVistaCommand}" CommandParameter="{x:Static viewmodel:Ventanas.EliminarCapitulo}"></MenuItem>
+        </ContextMenu>
+        <ItemsPanelTemplate x:Key="plantillaPanel">
+            <StackPanel></StackPanel>
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="plantillaCapitulo">
+            <local:CapituloView></local:CapituloView>
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel Background="Gold">
+        <DockPanel DockPanel.Dock="Top">
+            <Image Source="{Binding Temporada.URLimagen}" Width="112" Height="112"></Image>
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                <Button Command="{Binding CambiarVistaCommand}" CommandParameter="{x:Static viewmodel:Ventanas.AgregarCapitulo}" Background="LightBlue" Margin="3" Width="50" Height="50">
+                    <Image Source="https://iconape.com/wp-content/files/gr/367426/svg/add-circle-outline-logo-icon-png-svg.png"></Image>
+                </Button>
+                <Button Command="{Binding CambiarVistaCommand}" CommandParameter="{x:Static viewmodel:Ventanas.ListaTemporadas}" Background="LightBlue" Margin="3" Width="50" Height="50">
+                    <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/800px-Back_Arrow.svg.png"></Image>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <ListBox Background="LightYellow" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Temporada.Capitulos}" SelectedItem="{Binding Capitulo}" ItemTemplate="{StaticResource plantillaCapitulo}" ContextMenu="{StaticResource menu1}" ItemsPanel="{StaticResource plantillaPanel}"></ListBox>
+    </DockPanel>
+</UserControl>
